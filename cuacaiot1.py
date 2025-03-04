@@ -110,8 +110,8 @@ else:
     # 🔹 Prediksi Cuaca Terbaru
     if "cuaca (decision tree)" in df_filtered.columns and "cuaca (naive bayes)" in df_filtered.columns:
         st.subheader("📝 Prediksi Cuaca Terbaru")
-        latest_weather_dt = df_filtered.iloc[-1]["cuaca (decision tree)"]
-        latest_weather_nb = df_filtered.iloc[-1]["cuaca (naive bayes)"]
+        latest_weather_dt = df.iloc[-1]["cuaca (decision tree)"]
+        latest_weather_nb = df.iloc[-1]["cuaca (naive bayes)"]
 
         st.write(f"🌤 **Prediksi Decision Tree:** {latest_weather_dt}")
         st.write(f"🌧 **Prediksi Naive Bayes:** {latest_weather_nb}")
