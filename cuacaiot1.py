@@ -36,10 +36,10 @@ def get_data():
     return df
 
 # 🔹 Streamlit UI
-st.set_page_config(page_title="Dashboard Cuaca", layout="wide")
+st.set_page_config(page_title="Monitoring Cuaca Politeknik Negeri Batam", layout="wide")
 
-st.title("🌤 Dashboard Monitoring Cuaca")
-st.write("📡 Data diperbarui langsung dari Google Sheets")
+st.title("🌤 Monitoring Cuaca Politeknik Negeri Batam")
+st.write("📡 Data diperbarui langsung dari Sistem Monitoring")
 
 # 🔹 Load data
 df = get_data()
