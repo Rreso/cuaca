@@ -52,6 +52,14 @@ else:
     st.subheader("📋 Data Cuaca Terbaru")
     st.dataframe(df.tail(10))
 
+    # 🔹 Prediksi Cuaca Terbaru
+    st.subheader("📝 Prediksi Cuaca Terbaru")
+    latest_weather_dt = df.iloc[-1]["cuaca (decision tree)"]
+    latest_weather_nb = df.iloc[-1]["cuaca (naive bayes)"]
+
+    st.write(f"🌤 **Prediksi Decision Tree:** {latest_weather_dt}")
+    st.write(f"🌧 **Prediksi Naive Bayes:** {latest_weather_nb}")
+
     # 🔹 Visualisasi Grafik dengan Plotly
     st.subheader("📈 Grafik Data Cuaca")
 
@@ -69,20 +77,5 @@ else:
     st.plotly_chart(fig_humidity, use_container_width=True)
     st.plotly_chart(fig_wind, use_container_width=True)
 
-    # 🔹 Distribusi Klasifikasi Cuaca
-    st.subheader("🌦️ Distribusi Klasifikasi Cuaca")
-    fig_weather = px.bar(df["cuaca (decision tree)"].value_counts(), 
-                         title="Frekuensi Prediksi Cuaca (Decision Tree)",
-                         labels={"index": "Klasifikasi Cuaca", "value": "Jumlah"},
-                         color=df["cuaca (decision tree)"].value_counts().index,
-                         color_discrete_sequence=px.colors.qualitative.Set3)
 
-    st.plotly_chart(fig_weather, use_container_width=True)
 
-    # 🔹 Prediksi Cuaca Terbaru
-    st.subheader("📝 Prediksi Cuaca Terbaru")
-    latest_weather_dt = df.iloc[-1]["cuaca (decision tree)"]
-    latest_weather_nb = df.iloc[-1]["cuaca (naive bayes)"]
-
-    st.write(f"🌤 **Prediksi Decision Tree:** {latest_weather_dt}")
-    st.write(f"🌧 **Prediksi Naive Bayes:** {latest_weather_nb}")
