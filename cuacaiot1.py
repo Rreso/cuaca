@@ -36,7 +36,7 @@ def get_data():
     return df
 
 # 🔹 Streamlit UI
-st.set_page_config(page_title="Monitoring Cuaca Politeknik Negeri Batam", layout="wide")
+st.set_page_config(page_title="Monitoring Cuaca Polibatam", layout="wide")
 
 st.title("🌤 Monitoring Cuaca Politeknik Negeri Batam")
 st.write("📡 Data diperbarui langsung dari Sistem Monitoring")
@@ -53,12 +53,12 @@ else:
     st.dataframe(df.tail(10))
 
     # 🔹 Prediksi Cuaca Terbaru
-    st.subheader("📝 Prediksi Cuaca Terbaru")
+    st.subheader("📝 Prediksi Cuaca Realtime")
     latest_weather_dt = df.iloc[-1]["cuaca (decision tree)"]
     latest_weather_nb = df.iloc[-1]["cuaca (naive bayes)"]
 
-    st.write(f"🌤 **Prediksi Decision Tree:** {latest_weather_dt}")
-    st.write(f"🌧 **Prediksi Naive Bayes:** {latest_weather_nb}")
+    st.markdown(f"<h2>🌤 Prediksi Decision Tree: {latest_weather_dt}</h2>", unsafe_allow_html=True)
+    st.markdown(f"<h2>🌧 Prediksi Naive Bayes: {latest_weather_nb}</h2>", unsafe_allow_html=True)
 
     # 🔹 Visualisasi Grafik dengan Plotly
     st.subheader("📈 Grafik Data Cuaca")
