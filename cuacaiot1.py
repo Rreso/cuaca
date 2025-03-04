@@ -67,7 +67,7 @@ else:
                            value=(min_date, max_date))
 
     # 🔹 Konversi kembali ke datetime untuk filtering
-    start_date, end_date = pd.to_datetime(date_range[0]), pd.to_datetime(date_range[20])
+    start_date, end_date = pd.to_datetime(date_range[0]), pd.to_datetime(date_range[10])
     df_filtered = df.loc[start_date:end_date]
     
     # 🔹 Tampilkan tabel data
