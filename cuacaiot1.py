@@ -22,7 +22,7 @@ SHEET_NAME = "SensorData"
 def get_data():
     try:
         sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
-        data = sheet.get_all_values()
+        data = sheet.get_all_records()
         df = pd.DataFrame(data)
         
         # 🔹 Normalisasi nama kolom agar tidak ada spasi
