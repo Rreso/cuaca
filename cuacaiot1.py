@@ -57,8 +57,8 @@ else:
     latest_weather_dt = df.iloc[-1]["cuaca (decision tree)"]
     latest_weather_nb = df.iloc[-1]["cuaca (naive bayes)"]
 
-    st.markdown(f"<h2>🌤 Prediksi Decision Tree: {latest_weather_dt}</h2>", unsafe_allow_html=True)
-    st.markdown(f"<h2>🌧 Prediksi Naive Bayes: {latest_weather_nb}</h2>", unsafe_allow_html=True)
+    st.markdown(f"<h3> Prediksi Decision Tree: {latest_weather_dt}</h2>", unsafe_allow_html=True)
+    st.markdown(f"<h3> Prediksi Naive Bayes: {latest_weather_nb}</h2>", unsafe_allow_html=True)
 
     # 🔹 Visualisasi Grafik dengan Plotly
     st.subheader("📈 Grafik Data Cuaca")
