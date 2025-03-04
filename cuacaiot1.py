@@ -7,7 +7,7 @@ import json
 
 # 🔹 Konfigurasi kredensial Google Sheets
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials_info = json.loads(st.secrets["GOOGLE_CREDENTIALS"])
+credentials_info = json.loads(st.secrets["credentials"])
 creds = Credentials.from_service_account_info(credentials_info)
 
 # Autentikasi ke Google Sheets
