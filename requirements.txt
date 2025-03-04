@@ -1,0 +1,11 @@
+streamlit
+pandas
+gspread
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-auth-oauthlib
+google-auth-oauth2client
+oauth2client
+plotly
+json
