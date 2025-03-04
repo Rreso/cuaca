@@ -61,14 +61,12 @@ else:
     # 🔹 Konversi ke format datetime.date untuk slider
     min_date, max_date = min_date.date(), max_date.date()
     
-    date_range = st.slider("Pilih Rentang Waktu:", 
-                           min_value=min_date, 
-                           max_value=max_date, 
-                           value=(min_date, max_date))
+     # 🔹 Pilih rentang waktu tanpa konversi ulang
+    date_range = st.slider("Pilih Rentang Waktu:", min_value=df.index.min(), max_value=df.index.max(), value=(df.index.min(), df.index.max()))
 
-    # 🔹 Konversi kembali ke datetime untuk filtering
-    start_date, end_date = pd.to_datetime(date_range[0]), pd.to_datetime(date_range[1])
-    df_filtered = df.loc[start_date:end_date]
+     # 🔹 Filter data langsung tanpa konversi ulang
+     df_filtered = df.loc[date_range[0]:date_range[1]]
+
     
     # 🔹 Tampilkan tabel data
     st.subheader("📋 Data Cuaca Terbaru")
