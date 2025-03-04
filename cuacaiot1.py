@@ -72,7 +72,7 @@ else:
     
     # 🔹 Tampilkan tabel data
     st.subheader("📋 Data Cuaca Terbaru")
-    st.dataframe(df_filtered.tail(10))
+    st.dataframe(df.tail(10))
 
     # 🔹 Visualisasi Grafik dengan Plotly
     st.subheader("📈 Grafik Data Cuaca")
