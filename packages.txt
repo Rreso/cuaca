@@ -1,0 +1,11 @@
+[tool.poetry.dependencies]
+python = "^3.9"
+streamlit = "^1.30"
+pandas = "^2.1"
+gspread = "^5.7"
+google-auth = "^2.22"
+google-auth-oauthlib = "^1.2"
+google-auth-httplib2 = "^0.2"
+oauth2client = "^4.1"
+plotly = "^5.19"
+libgmp-dev
