@@ -1,4 +1,3 @@
-pip>=25.0.1
 streamlit
 pandas
 gspread
@@ -8,3 +7,4 @@ google-auth-httplib2
 oauth2client
 plotly
 json
+pip>=25.0.1
