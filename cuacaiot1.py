@@ -6,9 +6,9 @@ import plotly.express as px
 import json
 
 # 🔹 Konfigurasi kredensial Google Sheets
-scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 credentials_info = json.loads(st.secrets["GOOGLE_CREDENTIALS"])
-creds = Credentials.from_service_account_info(credentials_info)
+creds = Credentials.from_service_account_info(credentials_info, scope=scope)
 
 # Autentikasi ke Google Sheets
 client = gspread.authorize(creds)
