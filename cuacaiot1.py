@@ -64,7 +64,7 @@ else:
     st.subheader("📈 Grafik Data Cuaca")
 
     # Grafik Kelembaban
-    fig_humidity = px.line(df, x=df.index, y="suhu", title="Grafik Suhu (%)",
+    fig_temperature = px.line(df, x=df.index, y="suhu", title="Grafik Suhu (%)",
                            labels={"suhu": "Suhu (°C)", "timestamp": "Waktu"},
                            line_shape="spline", markers=True, color_discrete_sequence=["#FF7F00"])
     
