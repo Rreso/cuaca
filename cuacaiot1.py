@@ -64,6 +64,11 @@ else:
     st.subheader("📈 Grafik Data Cuaca")
 
     # Grafik Kelembaban
+    fig_humidity = px.line(df, x=df.index, y="suhu", title="Grafik Suhu (%)",
+                           labels={"suhu": "Suhu (°C)", "timestamp": "Waktu"},
+                           line_shape="spline", markers=True, color_discrete_sequence=["#FF7F00"])
+    
+    # Grafik Kelembaban
     fig_humidity = px.line(df, x=df.index, y="kelembaban", title="Grafik Kelembaban (%)",
                            labels={"kelembaban": "Kelembaban (%)", "timestamp": "Waktu"},
                            line_shape="spline", markers=True, color_discrete_sequence=["#00BFFF"])
@@ -74,6 +79,7 @@ else:
                        line_shape="spline", markers=True, color_discrete_sequence=["#FF4500"])
 
     # 🔹 Tampilkan Grafik
+    st.plotly_chart(fig_temperature, use_container_width=True)
     st.plotly_chart(fig_humidity, use_container_width=True)
     st.plotly_chart(fig_wind, use_container_width=True)
 
